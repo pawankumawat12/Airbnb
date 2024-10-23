@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <% if(success && success.length) { %>
+                <div class="alert alert-primary" id="alert" role="alert">
+                    <p id="flashmsg">
+                        <%= success %>
+                    </p>
+                </div>
+                <% } %>
+
+
+                    <% if(error && error.length) { %>
+                        <div class="alert alert-danger" id="alert" role="alert">
+                            <p id="flashmsg">
+                                <%= error %>
+                            </p>
+                        </div>
+                        <% } %>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    let flash = document.getElementById("alert");
+    setTimeout(() => {
+        flash.style.display = "none";
+    }, 3000)
+</script>
